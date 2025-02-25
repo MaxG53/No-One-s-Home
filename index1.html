@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+    <script src="rock.js"></script>
+	<script src="log.js"></script>
+    <script src="script.js"></script>
+	<script src="player.js"></script>
+	<script src="dooropen.js"></script>
+	<script src="crates.js"></script>
+	<script src="unlockkey.js"></script>
+	
+  </head>
+  <body>
+  
+    <a-scene light="defaultLightsEnabled: false" physics="debug: false">
+	
+	<a-asset>
+	<a-asset-item id="couch" src="old_couch.glb"></a-asset-item>
+	<a-asset-item id="table" src="old_table.glb"></a-asset-item>
+	<a-asset-item id="painting" src="vintage_painting_dani.glb"></a-asset-item>
+	<a-asset-item id="lock" src="rusty_lock_free.glb"></a-asset-item>
+	<a-asset-item id="cabinet" src="vintage_wooden_cabinets.glb"></a-asset-item>
+	<a-asset-item id="sink" src="cabinet_with_sink.glb"></a-asset-item>
+	<a-asset-item id="bed" src="old_bed.glb"></a-asset-item>
+	<a-asset-item id="nightstand" src="nightstand.glb"></a-asset-item>
+	<a-asset-item id="closet" src="box_wooden_closet_supplies.glb"></a-asset-item>
+	<a-asset-item id="fridge" src="refridgerator.glb"></a-asset-item>
+	<a-asset-item id="boxes" src="old_paper__cardboard_boxes.glb"></a-asset-item>
+	<a-asset-item id="piano" src="dusty_piano.glb"></a-asset-item>
+	<a-asset-item id="books" src="pile_of_books.glb"></a-asset-item>
+	<a-asset-item id="messybooks" src="12_old_books.glb"></a-asset-item>
+	<a-asset-item id="roompainting" src="framed_painting.glb"></a-asset-item>
+	<a-asset-item id="rug" src="nana_rug.glb"></a-asset-item>
+	<a-asset-item id="toolbox" src="toolbox.glb"></a-asset-item>
+	<a-asset-item id="bookshelf" src="dusty_old_bookshelf_free.glb"></a-asset-item>
+	<a-asset-item id="clock" src="old_grandfather_clock.glb"></a-asset-item>
+	<a-asset-item id="lamp" src="floor_lamp.glb"></a-asset-item>
+	<a-asset-item id="pepsi" src="retro_pepsi_can.glb"></a-asset-item>
+	<a-asset-item id="stew" src="can_of_stew.glb"></a-asset-item>
+	<a-asset-item id="oldpainting" src="bridgepainting.glb"></a-asset-item>
+	<a-asset-item id="oldtv" src="old_tv.glb"></a-asset-item>
+	<a-asset-item id="clothespile" src="clothespile.glb"></a-asset-item>
+	<a-asset-item id="key" src="key.glb"></a-asset-item>
+	<img id="stone" src="rock.jpg" />
+	<img id="tree" src="wood.jpg" />
+	<img id="walltexture" src="walltexture.png" />
+	<img id="woodfloor" src="woodfloortexture.png" />
+	<img id="wooddoor" src="wooddoor.png" />
+	<img id="cratetexture" src="cratetexture.png" />
+      </a-asset>
+	  
+	<a-gltf-model static-body src="#couch" scale="0.025 0.025 0.025" position="8.5 0 -4.5"></a-gltf-model>
+	<a-gltf-model static-body src="#oldpainting" rotation="0 0 0" scale="5 5 5" position="8.5 3.9 -5.9"></a-gltf-model>
+	<a-gltf-model static-body src="#clock" scale="2 2 2" rotation="0 180 90" position="2.5 0.6 17.5"></a-gltf-model>
+	<a-entity>
+	<a-gltf-model static-body src="#lamp" scale="2 2 2" rotation="0 0 0" position="8.9 2.1 7.2"></a-gltf-model>
+	<a-light type="point" color="#D3D3D3" position="8.9 3 7.2"></a-light>
+	</a-entity>
+	<a-gltf-model static-body src="#piano" scale="6 6 6" position="-2 0 -3.6" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#boxes" rotation="0 0 0" position="18 0 -2.4" scale="2 2 3"></a-gltf-model>
+	<a-gltf-model static-body src="#table" scale="0.035 0.025 0.025" rotation="0 -90 0" position="-14 0 6"></a-gltf-model>
+	<a-gltf-model static-body src="#pepsi" scale="0.04 0.04 0.04" rotation="0 0 0" position="-13.7 1.8 6.9"></a-gltf-model>
+	<a-gltf-model static-body src="#pepsi" scale="0.04 0.04 0.04" rotation="0 0 0" position="-14.2 1.8 7.1"></a-gltf-model>
+	<a-gltf-model static-body src="#pepsi" scale="0.04 0.04 0.04" rotation="90 45 0" position="-14.2 2 6.4"></a-gltf-model>
+	<a-gltf-model static-body src="#table" scale="0.045 0.025 0.035" rotation="0 0 0" position="8 0 -1"></a-gltf-model>
+	<a-gltf-model static-body src="#oldtv" scale="0.015 0.015 0.015" rotation="0 215 0" position="9.1 2.5 -0.8"></a-gltf-model>
+	<a-gltf-model static-body src="#toolbox" scale="3 3 3" rotation="0 -45 0" position="7.1 2.2 -0.6"></a-gltf-model>
+	<a-gltf-model static-body src="#books" scale="6 6 6" rotation="0 0 0" position="8 3 4"></a-gltf-model>
+	<a-gltf-model static-body src="#rug" scale="6 6 6" rotation="0 0 0" position="8.8 0.2 7.3"></a-gltf-model>
+	<a-gltf-model static-body src="#painting" scale="4 4 4" rotation="0 90 0" position="-14.8 2.3 7.3"></a-gltf-model>
+	<a-gltf-model static-body src="#cabinet" rotation="0 180 0" position="19.5 1 10.5" scale="1.1 0.5 1.1"></a-gltf-model>
+	<a-gltf-model static-body src="#fridge" rotation="0 -90 0" position="26.2 0 -4" scale="1.4 1.4 1.5"></a-gltf-model>
+	<a-gltf-model static-body src="#bed" scale="1.9 1.9 1.9" position="-14.6 0 -5.5" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#bed" scale="1.9 1.9 1.9" position="-14.6 0 1.7" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#bed" scale="1.9 1.9 1.9" position="-10 0 13" rotation="0 45 0"></a-gltf-model>
+	<a-gltf-model static-body src="#bed" scale="1.9 1.9 1.9" position="-6 0 9" rotation="0 -45 -90"></a-gltf-model>
+	<a-gltf-model static-body src="#clothespile" scale="4 4 4" position="-12.6 0.3 -1.8" rotation="0 45 0"></a-gltf-model>
+	<a-gltf-model static-body src="#clothespile" scale="4 4 4" position="-12.6 1.5 2.3" rotation="0 180 0"></a-gltf-model>
+	<a-gltf-model static-body src="#nightstand" scale="3 3 3" position="-14 0 -2.5" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#nightstand" scale="3 3 3" position="-14 0 0.7" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#nightstand" scale="3 3 3" position="-12 0 16" rotation="-25 45 0"></a-gltf-model>
+	<a-gltf-model static-body src="#nightstand" scale="3 3 3" position="-14 0 0.7" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#closet" scale="2.5 2.5 2.5" position="-3.5 0.3 -2.6" rotation="25 180 0"></a-gltf-model>
+	<a-gltf-model static-body src="#messybooks" scale="3 3 3" position="-5.5 0.1 -3.2" rotation="0 180 0"></a-gltf-model>
+	<a-gltf-model static-body src="#roompainting" scale="6 6 6" position="-8.5 3 4" rotation="0 90 0"></a-gltf-model>
+	<a-gltf-model static-body src="#bookshelf" scale="5 2.2 3" position="12 0 17.3" rotation="0 0 0"></a-gltf-model>
+		
+ <a-entity position="0 3 0">
+ <a-entity position="0 0 18">
+  <a-box static-body src="walltexture.png" scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2.52 2 0" position="1.76 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2.52 2 0"  position="1.76 0 0"></a-box>
+  <a-entity light="type: spot; angle: 90 color=green" position="19.5 2.3 10.5"></a-entity>
+  </a-entity>
+  <a-entity position="-6 0 -6">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="0 0 -6">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="6 0 -6">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="12 0 -6">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="18 0 -6">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="-12 0 -6">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity id="hallway" position="-12 0 4">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity id="hallway" position="-12 0 8">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity id="hallway" position="-6 0 4">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity id="hallway" position="-6 0 8">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation=" 0 90 0" position="-3 0 -3">
+  <a-box static-body src="walltexture.png"scale="2.53 2 0"  position="-2.25 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2.53 2 0"  position="-2.25 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity  rotation="0 90 0" position="-3 0 3">
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity  rotation="0 90 0" position="-3 0 15">
+  <a-box static-body src="walltexture.png" scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2.52 2 0" position="1.76 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0" position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2.52 2 0" position="1.76 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation=" 0 90 0" position="-3 0 9">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  </a-entity>
+  <a-entity position="-12 0 18">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="-6 0 18">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="6 0 18">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="12 0 18">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+<a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity position="18 0 18">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="-15 0 -3">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="-15 0 3">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="-15 0 9">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="-15 0 15">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="21 0 -3">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+   <a-entity rotation="0 90 0" position="21 0 3">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="21 0 9">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3" position="-2 0 0"></a-box>
+  <a-box static-body scale="2 2 0" color="white" opacity="0.3"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="21 0 15">
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 -2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 0 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="0 2 0"></a-box>
+  <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
+  </a-entity>
+  <a-entity rotation="0 90 0" position="21 0 -3">
+  <!--Roof--!>
+  <a-cylinder src="rooftexture.png" repeat="6 6" rotation="-90 0 0" segments-radial=3 position="-9 7 -18" scale="15 36 8" ></a-cylinder>
+  <a-box src="woodfloortexture.png" position="-9 -2.9 -18" height="0.1" width="24" depth="36" color="yellow"></a-box>
+  </a-entity>
+  </a-entity>
+
+<a-entity environment="preset: forest; skyColor:black; fog:0.9; lightPosition:-4 -4 -4"></a-entity>
+	  <a-plane static-body rotation="-90 0 0" width="100" height="100" position="0 0 0" opacity="0"></a-plane>
+	  <a-sky color="#ECECEC"></a-sky>
+	  <a-entity position="0 1.6 0">
+	  <a-camera wasd-controls="enabled:false" position="0 2.6 3" >
+		<a-cursor raycaster="objects: [clickable]">
+		</a-cursor>
+	  </a-camera>
+	  </a-entity>
+    </a-scene>
+  </body>
+</html>
