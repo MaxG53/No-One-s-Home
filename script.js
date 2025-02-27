@@ -52,7 +52,7 @@ window.onload = function () {
   
   redKey = new UnlockKey(-14, 2.3, 13, "red");
   greenKey = new UnlockKey(19.5, 2.3, 10.5, "green");
-  yellowKey = new UnlockKey(-1,1,-3, "yellow");
+  yellowKey = new UnlockKey(-12.6,1.4,2.3, "yellow");
   setTimeout(loop, 1000);
 };
 
