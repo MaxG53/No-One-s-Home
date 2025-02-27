@@ -59,6 +59,9 @@ class DoorOpen {
             this.locked = false;
             this.isOpening = true;
             this.spin();
+			if(this.color == "red"){
+				gameOver.setAttribute("position", "-0.9 4 30");
+			}
         }
     }
 

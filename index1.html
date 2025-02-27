@@ -45,6 +45,7 @@
 	<a-asset-item id="oldtv" src="old_tv.glb"></a-asset-item>
 	<a-asset-item id="clothespile" src="clothespile.glb"></a-asset-item>
 	<a-asset-item id="key" src="key.glb"></a-asset-item>
+	<a-asset-item id="jumpscare" src="nmickmick_jumpscare/scene.gltf"></a-asset-item>
 	<img id="stone" src="rock.jpg" />
 	<img id="tree" src="wood.jpg" />
 	<img id="walltexture" src="walltexture.png" />
@@ -52,13 +53,14 @@
 	<img id="wooddoor" src="wooddoor.png" />
 	<img id="cratetexture" src="cratetexture.png" />
       </a-asset>
-	  
+	<a-gltf-model id="gameOver" src="#jumpscare" rotation= "0 180 0" position="-0.9 -4 30" animation-mixer></a-gltf-model>
 	<a-gltf-model static-body src="#couch" scale="0.025 0.025 0.025" position="8.5 0 -4.5"></a-gltf-model>
 	<a-gltf-model static-body src="#oldpainting" rotation="0 0 0" scale="5 5 5" position="8.5 3.9 -5.9"></a-gltf-model>
 	<a-gltf-model static-body src="#clock" scale="2 2 2" rotation="0 180 90" position="2.5 0.6 17.5"></a-gltf-model>
 	<a-entity>
 	<a-gltf-model static-body src="#lamp" scale="2 2 2" rotation="0 0 0" position="8.9 2.1 7.2"></a-gltf-model>
 	<a-light type="point" color="#D3D3D3" position="8.9 3 7.2"></a-light>
+	<a-light type="point" color="green" intensity="0.4" position="19.5 2.3 10.5"></a-light>
 	</a-entity>
 	<a-gltf-model static-body src="#piano" scale="6 6 6" position="-2 0 -3.6" rotation="0 90 0"></a-gltf-model>
 	<a-gltf-model static-body src="#boxes" rotation="0 0 0" position="18 0 -2.4" scale="2 2 3"></a-gltf-model>
@@ -88,7 +90,9 @@
 	<a-gltf-model static-body src="#messybooks" scale="3 3 3" position="-5.5 0.1 -3.2" rotation="0 180 0"></a-gltf-model>
 	<a-gltf-model static-body src="#roompainting" scale="6 6 6" position="-8.5 3 4" rotation="0 90 0"></a-gltf-model>
 	<a-gltf-model static-body src="#bookshelf" scale="5 2.2 3" position="12 0 17.3" rotation="0 0 0"></a-gltf-model>
-		
+	
+	<!-- <a-text id="winText" value="You Escaped!" position="0 3 -3" color="brown" scale="2 2 2" visible="false"></a-text> -->
+	
  <a-entity position="0 3 0">
  <a-entity position="0 0 18">
   <a-box static-body src="walltexture.png" scale="2 2 0"  position="-2 -2 0"></a-box>
@@ -98,7 +102,6 @@
   <a-box static-body src="walltexture.png"scale="2 2 0"  position="2 2 0"></a-box>
   <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 0 0"></a-box>
   <a-box static-body src="walltexture.png"scale="2.52 2 0"  position="1.76 0 0"></a-box>
-  <a-entity light="type: spot; angle: 90 color=green" position="19.5 2.3 10.5"></a-entity>
   </a-entity>
   <a-entity position="-6 0 -6">
   <a-box static-body src="walltexture.png"scale="2 2 0"  position="-2 -2 0"></a-box>
