@@ -51,8 +51,8 @@ window.onload = function () {
   crate1 = new Crates(-14,2,13,90, "yellow");
   
   redKey = new UnlockKey(-14, 0.5, 13, "red");
-  greenKey = new UnlockKey(19.5, 2.3, 10.5, "green");
-  yellowKey = new UnlockKey(-12.6,1.4,2.3, "yellow");
+  greenKey = new UnlockKey(19.5, 2.1, 10.5, "green");
+  yellowKey = new UnlockKey(-12.6,1.4, 2.3, "yellow");
   setTimeout(loop, 1000);
 };
 
