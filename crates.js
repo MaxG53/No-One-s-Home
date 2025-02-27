@@ -13,7 +13,7 @@ class Crates{
 
 		this.obj = document.createElement("a-entity");
 		this.obj.setAttribute("position",`${x} ${y} ${z}`);
-		this.obj.setAttribute("rotation",{x:0, y:this.r, z:0});
+		this.obj.setAttribute("rotation",{x:0, y:this.r, z:180});
 		
 		let cratewall1 = document.createElement("a-box");
 		cratewall1.setAttribute("src","#cratetexture");
