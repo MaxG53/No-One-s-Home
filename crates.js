@@ -95,6 +95,7 @@ class Crates{
         if (!this.locked && this.a > -2) { 
             this.a -= this.da;
             this.lock.setAttribute("position", `0 ${this.a} 1.1`);
+			this.lock.setAttribute("opacity","0");
         }
     }
 	
